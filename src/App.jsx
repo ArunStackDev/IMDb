@@ -1,8 +1,8 @@
 import React from "react";
 import Navbar from "./components/Navbar.jsx";
 import Movies from "./components/Movies.jsx";
-import WatchList from "./components/Recommendations.jsx";
-import Recommendations from "./components/WatchList.jsx";
+import WatchList from "./components/WatchList.jsx";
+import Recommendations from "./components/Recommendations.jsx";
 import UserProfile from "./components/UserProfile.jsx";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 

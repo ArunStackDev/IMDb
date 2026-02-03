@@ -1,8 +1,13 @@
 import React from 'react'
+import Banner from './Banner.jsx'
+import MovieCart from './MovieCart.jsx'
 
 function Movies() {
   return (
-    <div>Movies</div>
+    <div>
+      <Banner/>
+      <MovieCart/>
+    </div>
   )
 }
 
