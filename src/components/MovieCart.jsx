@@ -2,7 +2,7 @@ import React from "react";
 
 function MovieCart() {
   return (
-    <div className="flex items-center justify-center h-60 w-40 rounded-lg m-5 bg-cover bg-center"
+    <div className="flex items-center justify-center h-70 w-45 rounded-lg m-2 bg-cover bg-center hover:scale-110 transition-transform duration-300"
     
       style={{
         backgroundImage:
