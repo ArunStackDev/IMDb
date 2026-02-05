@@ -29,6 +29,7 @@ function pageincrement(){
     }
     fetchMovies();
   }, [currPage]);
+console.log(movies);
 
   return (
     <div>
