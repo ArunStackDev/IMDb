@@ -2,22 +2,21 @@ import React, { useState, useEffect } from "react";
 import Banner from "./Banner.jsx";
 import MovieCart from "./MovieCart.jsx";
 import axios from "axios";
-import { data } from "react-router-dom";
 import Pages from "./Pages.jsx";
 // https://api.themoviedb.org/3/movie/now_playing?language=en-US&page=1
 
-function Movies() {
+function Movies({ addToWatchlist }) {
   const [movies, setMovies] = useState([]);
   const [currPage, setcurrPage] = useState(1);
 
-function pagedecrement(){
-  if(currPage>1){
-    setcurrPage(currPage-1);
+  function pagedecrement() {
+    if (currPage > 1) {
+      setcurrPage(currPage - 1);
+    }
   }
-}
-function pageincrement(){
-  setcurrPage(currPage+1);
-}
+  function pageincrement() {
+    setcurrPage(currPage + 1);
+  }
 
   useEffect(() => {
     async function fetchMovies() {
@@ -29,7 +28,7 @@ function pageincrement(){
     }
     fetchMovies();
   }, [currPage]);
-console.log(movies);
+  console.log(movies);
 
   return (
     <div>
@@ -39,11 +38,14 @@ console.log(movies);
       </h3>
 
       <div className="flex flex-wrap justify-center gap-20">
-        {movies.map((movie) => (
+        {/* {movies.map((movie) => (
           <MovieCart
             movieRatings={movie.vote_average}
             moviePoster={movie.poster_path}
           />
+        ))} */}
+        {movies.map((movie) => (
+          <MovieCart key={movie.id} movie={movie} addToWatchlist={addToWatchlist} />
         ))}
       </div>
       <Pages currPage={currPage} pagedecrement={pagedecrement} pageincrement={pageincrement} />
